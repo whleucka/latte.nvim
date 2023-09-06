@@ -31,14 +31,6 @@ If you prefer lazy-loading the plugin for improved startup times, you can use [`
 ```lua
 {
   'whleucka/latte.nvim',
-  config = function()
-    require'latte'.setup {
-      -- Add your configuration options here
-    }
-  end,
-  opts = {
-    // Some configuration options
-  }
 }
 ```
 
@@ -55,6 +47,14 @@ Remember to replace `'do your setup here'` with any specific setup you want to p
 You can further customize the behavior of `latte.nvim` by adding configurations in your `init.vim` or `init.lua`:
 
 ```lua
+{
+  'whleucka/latte.nvim',
+  config = function()
+    require'latte'.setup {
+      -- Add your configuration options here
+    }
+  end
+}
 ```
 
 ## Contributing
