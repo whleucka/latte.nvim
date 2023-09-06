@@ -4,6 +4,8 @@
 
 **latte.nvim** is a Neovim plugin designed to enhance your experience when working with PHP Latte templates. It provides automatic syntax highlighting, a robust parser, and extensibility to streamline your development process.
 
+### WIP NOTE: This plugin is experimental and is incomplete.
+
 ## Features
 
 - **Syntax Highlighting:** Enjoy automatic syntax highlighting for Latte templates, making your code more readable and error-free.
