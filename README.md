@@ -34,17 +34,15 @@ If you prefer lazy-loading the plugin for improved startup times, you can use [`
 }
 ```
 
-Remember to replace `'do your setup here'` with any specific setup you want to perform when the plugin is loaded.
-
 ## Usage
 
-1. Install and configure `latte.nvim` using the instructions above.
+1. Install `latte.nvim` using the instructions above.
 2. Open a PHP Latte template file in Neovim.
 3. Enjoy automatic syntax highlighting and parsing.
 
 ## Configuration
 
-You can further customize the behavior of `latte.nvim` by adding configurations in your `init.vim` or `init.lua`:
+You can further customize the behavior of `latte.nvim` by adding configurations, for example:
 
 ```lua
 {
@@ -59,7 +57,7 @@ You can further customize the behavior of `latte.nvim` by adding configurations 
 
 ## Contributing
 
-Contributions are welcome! Please read our [contribution guidelines](CONTRIBUTING.md) for details on how to get started.
+Contributions are welcome!
 
 ## License
 
