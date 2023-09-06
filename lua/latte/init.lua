@@ -1,39 +1,21 @@
--- Define a Lua module for your plugin
-local M = {}
+-- Define a function to apply regex-based syntax highlighting for Latte templates
+function HighlightLatteSyntax()
+  -- Define regex patterns and highlight groups
+  local patterns = {
+    { "\\({block\\s\\+[^}]*}\\)\\|{\\/block}", "latteBlock" },
+    -- Add more patterns as needed
+  }
 
--- Require the Tree-sitter module
-local ts = require('nvim-treesitter')
-
--- Define your plugin's setup function
-function M.setup()
-  -- Enable the Latte parser for the specified filetype(s)
-  ts.ensure_installed('maintained')
-  ts.setup({
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = false
-    },
-  })
-
-  -- Add any additional setup or configuration here
-
-  -- Define your plugin's commands and key mappings
-  vim.cmd([[command! LatteEnable lua require'latte'.enable()]])
-  vim.cmd([[command! LatteDisable lua require'latte'.disable()]])
-
-  -- Set up any keybindings or other configuration options
-
-  -- Define your plugin's functions
-  M.enable = function()
-    -- Enable Latte template support
-    -- Implement the logic to activate syntax highlighting or other features here
+  for _, pattern in pairs(patterns) do
+    local regex, highlight_group = pattern[1], pattern[2]
+    vim.cmd(string.format([[syntax match %s /%s/]], highlight_group, regex))
   end
 
-  M.disable = function()
-    -- Disable Latte template support
-    -- Implement the logic to deactivate syntax highlighting or other features here
-  end
+  vim.api.nvim_buf_set_option(0, 'filetype', 'html')
 end
 
--- Export the module
-return M
+-- Automatically apply Latte syntax highlighting for .latte files
+vim.cmd([[autocmd BufRead,BufNewFile *.latte lua HighlightLatteSyntax()]])
+
+-- Define Latte template highlight groups and set colors
+vim.cmd("highlight link latteBlock Function")

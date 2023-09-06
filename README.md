@@ -6,57 +6,6 @@
 
 ### WIP NOTE: This plugin is experimental and is incomplete.
 
-## Features
-
-- **Syntax Highlighting:** Enjoy automatic syntax highlighting for Latte templates, making your code more readable and error-free.
-
-- **Powerful Parser:** A Latte-specific parser ensures that your templates are accurately interpreted by Neovim, reducing the chances of errors.
-
-- **Customization:** Customize and extend the plugin to match your specific requirements.
-
-## Installation
-
-You can use your favorite plugin manager to install `latte.nvim`. For example, using [vim-plug](https://github.com/junegunn/vim-plug), you can add the following lines to your `init.vim` or `init.lua`:
-
-### vim-plug
-
-```vim
-Plug 'whleucka/latte.nvim'
-```
-
-Then, run `:PlugInstall` in Neovim to install the plugin.
-
-### Lazy Loading with `folke/lazy.nvim`
-
-If you prefer lazy-loading the plugin for improved startup times, you can use [`folke/lazy.nvim`](https://github.com/folke/lazy.nvim) as follows:
-
-```lua
-{
-  'whleucka/latte.nvim',
-}
-```
-
-## Usage
-
-1. Install `latte.nvim` using the instructions above.
-2. Open a PHP Latte template file in Neovim.
-3. Enjoy automatic syntax highlighting and parsing.
-
-## Configuration
-
-You can further customize the behavior of `latte.nvim` by adding configurations, for example:
-
-```lua
-{
-  'whleucka/latte.nvim',
-  config = function()
-    require'latte'.setup {
-      -- Add your configuration options here
-    }
-  end
-}
-```
-
 ## Contributing
 
 Contributions are welcome!
