@@ -28,27 +28,18 @@ Then, run `:PlugInstall` in Neovim to install the plugin.
 
 If you prefer lazy-loading the plugin for improved startup times, you can use [`folke/lazy.nvim`](https://github.com/folke/lazy.nvim) as follows:
 
-1. Add `folke/lazy.nvim` to your plugin manager:
-
-```vim
-" Using vim-plug
-Plug 'folke/lazy.nvim'
-```
-
-2. Configure `folke/lazy.nvim` in your `init.vim` or `init.lua` to load `latte.nvim` when needed:
-
-```vim
-lua << EOF
-local lazy = require('lazy')
-
-lazy.plugins['whleucka/latte.nvim'] = {
-  on_cmd = { 'LatteEnable', 'LatteDisable' },
-  on_ft = { 'latte' }, -- Set this to the filetype(s) where you want to enable the plugin
-  setup = function()
-    vim.cmd[[do your setup here]]
+```lua
+{
+  'whleucka/latte.nvim',
+  config = function()
+    require'latte'.setup {
+      -- Add your configuration options here
+    }
   end,
+  opts = {
+    // Some configuration options
+  }
 }
-EOF
 ```
 
 Remember to replace `'do your setup here'` with any specific setup you want to perform when the plugin is loaded.
@@ -64,9 +55,6 @@ Remember to replace `'do your setup here'` with any specific setup you want to p
 You can further customize the behavior of `latte.nvim` by adding configurations in your `init.vim` or `init.lua`:
 
 ```lua
-require'latte'.setup {
-  -- Add your configuration options here
-}
 ```
 
 ## Contributing
@@ -77,6 +65,3 @@ Contributions are welcome! Please read our [contribution guidelines](CONTRIBUTIN
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-Feel the joy of coding with PHP Latte templates in Neovim! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request. We'd love to hear from you.
